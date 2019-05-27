@@ -8,7 +8,7 @@
 using namespace std;
 
 // 具体观察者
-class ConcreteObserver : public Observer
+class ConcreteObserver : public IObserver
 {
 public:
     ConcreteObserver(string name) { m_strName = name; }

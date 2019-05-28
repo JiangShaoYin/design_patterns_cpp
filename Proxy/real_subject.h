@@ -5,7 +5,7 @@
 #include <iostream>
 
 // ÖÐ¹úÒÆ¶¯
-class CMCC : public ITelco{
+class CMCC : public Telco{
 public:
 	void Recharge(int money) override {
 		std::cout << "Recharge " << money;

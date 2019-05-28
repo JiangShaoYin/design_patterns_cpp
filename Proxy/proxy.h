@@ -6,18 +6,18 @@
 #include <iostream>
 
 // 代理点
-class Proxy : public ITelco{
+class Proxy : public Telco{
 public:
 	Proxy()
-	: m_pCMCC(NULL) {}
-	~Proxy() { delete m_pCMCC; }
+	: CMCC_(NULL) {}
+	~Proxy() { delete CMCC_; }
 
 	// 低于 50 不充
 	void Recharge(int money) override {
 		if (money >= 50) {
-			if (m_pCMCC == NULL)
-				m_pCMCC = new CMCC();
-			m_pCMCC->Recharge(money);
+			if (CMCC_ == NULL)
+				CMCC_ = new CMCC();
+			CMCC_->Recharge(money);
 		}
 		else {
 			std::cout << "Sorry, too little money" << std::endl;
@@ -25,7 +25,7 @@ public:
 	}
 
 private:
-	CMCC *m_pCMCC;
+	CMCC *CMCC_;
 };
 
 #endif // PROXY_H

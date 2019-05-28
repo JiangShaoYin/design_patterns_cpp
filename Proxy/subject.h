@@ -2,9 +2,9 @@
 #define SUBJECT_H
 
 // 电信运营商
-class ITelco {
+class Telco {
 public:
-	virtual ~ITelco() {}
+	virtual ~Telco() {}
 	virtual void Recharge(int money) = 0;  // 充值
 };
 

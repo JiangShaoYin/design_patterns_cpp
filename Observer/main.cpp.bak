@@ -10,8 +10,8 @@ int main()
 {
     // 创建主题、观察者
     ConcreteSubject *pSubject = new ConcreteSubject();
-    Observer *pObserver1 = new ConcreteObserver("Jack Ma");
-    Observer *pObserver2 = new ConcreteObserver("Pony");
+    IObserver *pObserver1 = new ConcreteObserver("Jack Ma");
+    IObserver *pObserver2 = new ConcreteObserver("Pony");
 
     // 注册观察者
     pSubject->Attach(pObserver1);

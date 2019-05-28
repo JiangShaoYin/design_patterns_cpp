@@ -1,7 +1,7 @@
 #ifndef SUBJECT_H
 #define SUBJECT_H
 
-class Observer;
+class IObserver;
 
 // 抽象主题
 class ISubject

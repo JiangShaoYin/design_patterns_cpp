@@ -4,7 +4,7 @@
 #include "product.h"
 
 // 建造者接口，组装流程
-class IBuilder
+class Builder
 {
 public:
     virtual void BuildCpu() = 0;  // 创建 CPU

@@ -6,39 +6,38 @@
 #define SAFE_DELETE(p) { if(p){delete(p); (p)=NULL;} }
 #endif
 
-int main()
-{
-    Director *pDirector = new Director();
+int main(){
+    Director *director = new Director();
 
-    ThinkPadBuilder *pTPBuilder = new ThinkPadBuilder();
-    YogaBuilder *pYogaBuilder = new YogaBuilder();
+    ThinkPadBuilder *TP_Builder = new ThinkPadBuilder();
+    YogaBuilder *Yoga_Builder = new YogaBuilder();
 
     // 组装 ThinkPad、Yoga
-    pDirector->Create(pTPBuilder);
-    pDirector->Create(pYogaBuilder);
+	director->Create(TP_Builder);
+	director->Create(Yoga_Builder);
 
     // 获取组装后的电脑
-    Computer *pThinkPadComputer = pTPBuilder->GetResult();
-    Computer *pYogaComputer = pYogaBuilder->GetResult();
+    Computer *ThinkPadComputer = TP_Builder->GetResult();
+    Computer *YogaComputer = Yoga_Builder->GetResult();
 
     // 测试输出
     cout << "-----ThinkPad-----" << endl;
-    cout << "CPU: " << pThinkPadComputer->GetCPU() << endl;
-    cout << "Mainboard: " << pThinkPadComputer->GetMainboard() << endl;
-    cout << "Ram: " << pThinkPadComputer->GetRam() << endl;
-    cout << "VideoCard: " << pThinkPadComputer->GetVideoCard() << endl;
+    cout << "CPU: " << ThinkPadComputer->GetCPU() << endl;
+    cout << "Mainboard: " << ThinkPadComputer->GetMainboard() << endl;
+    cout << "Ram: " << ThinkPadComputer->GetRam() << endl;
+    cout << "VideoCard: " << ThinkPadComputer->GetVideoCard() << endl;
 
     cout << "-----Yoga-----" << endl;
-    cout << "CPU: " << pYogaComputer->GetCPU() << endl;
-    cout << "Mainboard: " << pYogaComputer->GetMainboard() << endl;
-    cout << "Ram: " << pYogaComputer->GetRam() << endl;
-    cout << "VideoCard: " << pYogaComputer->GetVideoCard() << endl;
+    cout << "CPU: " << YogaComputer->GetCPU() << endl;
+    cout << "Mainboard: " << YogaComputer->GetMainboard() << endl;
+    cout << "Ram: " << YogaComputer->GetRam() << endl;
+    cout << "VideoCard: " << YogaComputer->GetVideoCard() << endl;
 
-	SAFE_DELETE(pThinkPadComputer);
-	SAFE_DELETE(pYogaComputer);
-	SAFE_DELETE(pTPBuilder);
-	SAFE_DELETE(pYogaBuilder);
-	SAFE_DELETE(pDirector);
+	SAFE_DELETE(ThinkPadComputer);
+	SAFE_DELETE(YogaComputer);
+	SAFE_DELETE(TP_Builder);
+	SAFE_DELETE(Yoga_Builder);
+	SAFE_DELETE(director);
 
 	getchar();
 

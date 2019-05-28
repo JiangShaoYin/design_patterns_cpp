@@ -4,7 +4,7 @@
 #include "builder.h"
 
 // ThinkPad 系列
-class ThinkPadBuilder : public IBuilder
+class ThinkPadBuilder : public Builder
 {
 public:
     ThinkPadBuilder() { m_pComputer = new Computer(); }
@@ -21,7 +21,7 @@ private:
 };
 
 // Yoga 系列
-class YogaBuilder : public IBuilder
+class YogaBuilder : public Builder
 {
 public:
     YogaBuilder() { m_pComputer = new Computer(); }
